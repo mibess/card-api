@@ -1,7 +1,10 @@
 package com.mibess.card.domain.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -52,5 +55,13 @@ public class CardService {
     public Card findCardByCode(String cardCode) {
         return cardRepository.findByCode(cardCode).orElseThrow(
                 () -> new NoSuchElementException(String.format("Card não encontrado para o código: %s", cardCode)));
+    }
+
+    public List<CardDTO> findAllCards() {
+
+        List<Card> cards = cardRepository.findAll();
+
+        return cards.stream().map(cardConverter::toCardDTO).collect(Collectors.toList());
+
     }
 }
