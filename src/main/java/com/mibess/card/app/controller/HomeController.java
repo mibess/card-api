@@ -20,7 +20,7 @@ public class HomeController {
     public ResponseEntity<Map<String, String>> hostCheck() {
 
         Map<String, String> response = new HashMap<>();
-        response.put("hostcheck", "Ok v3 - Deployed at: " + new Date().toString());
+        response.put("hostcheck", "Ok v1 - Deployed at: " + new Date().toString());
 
         return ResponseEntity.ok().body(response);
     }
