@@ -34,6 +34,11 @@ public class CardController {
         return cardService.findAllCards();
     }
 
+    @GetMapping("{cardCode}")
+    public CardDTO findCardByCode(@PathVariable String cardCode) {
+        return cardService.findCardByCodeDTO(cardCode);
+    }
+
     @PostMapping
     public ResponseEntity<CardDTO> createCard(@RequestBody CardInput cardInput) {
 

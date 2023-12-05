@@ -1,28 +1,28 @@
 networks:
-    card-network:
-        driver: bridge
+  card-network:
+    driver: bridge
 
 services:
-    card-postgres:
-        image: postgres:15.5
-        environment:
-            POSTGRES_DB: card-db
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: 123456
-        ports:
-            - 54321:5432
-        networks:
-            - card-network
+  card-postgres:
+    image: postgres:15.5
+    environment:
+      POSTGRES_DB: card-db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - 54321:5432
+    networks:
+      - card-network
 
-    card-api:
-        build: .
-        environment:
-            DB_HOST: jdbc:postgresql://card-postgres:5432/card-db?useSSL=false&serverTimezone=America/Sao_Paulo
-            DB_USER: postgres
-            DB_PASSWORD: 123456
-        ports:
-            - 8080:8080
-        networks:
-            - card-network
-        depends_on:
-            - card-postgres
+  card-api:
+    build: .
+    environment:
+      DB_HOST: jdbc:postgresql://card-postgres:5432/card-db?useSSL=false&serverTimezone=America/Sao_Paulo
+      DB_USER: postgres
+      DB_PASSWORD: 123456
+    ports:
+      - 8080:8080
+    networks:
+      - card-network
+    depends_on:
+      - card-postgres
