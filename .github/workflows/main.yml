@@ -19,8 +19,6 @@ jobs:
       - name: Build the API
         run: mvn clean package
 
-      # esse upload é usado apenas para casos de deploy na EC2
-      # para deploys que utilizam a imagem em um registry não precisa dos arquivos
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v3.1.3
         with:
@@ -50,3 +48,13 @@ jobs:
     steps:
       - name: Testing Application
         run: echo '## Testing the application ...'
+
+  aws-registry:
+    needs: tests
+    uses: ./.github/workflows/aws-registry.yml
+    secrets: inherit
+
+  deploy-EC2:
+    needs: aws-registry
+    uses: ./.github/workflows/deploy-EC2.yml
+    secrets: inherit
