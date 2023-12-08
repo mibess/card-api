@@ -34,4 +34,4 @@ jobs:
             echo 'Tag Image OK'
             docker rm cards-api
             echo 'Remove old Image OK'
-            docker run -p 80:8080 -d --env DB_HOST=${{ secrets.DB_HOST }} --env DB_USER=${{ secrets.DB_USER }} --env DB_PASSWORD=${{ secrets.DB_PASSWORD }} --name cards-api cards-api:latest
+            docker run -p 80:8080 -d --env DB_HOST="${{ secrets.DB_HOST }}" --env DB_USER=${{ secrets.DB_USER }} --env DB_PASSWORD=${{ secrets.DB_PASSWORD }} --name cards-api cards-api:latest
