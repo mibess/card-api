@@ -2,13 +2,16 @@
 
 ## _API de dados para o frontend Mibess Cards_
 
-Essa api de dados do nosso frontend Mibess Cards. Desenvolvida utilizando Spring Boot com ela podemos listar, cadastrar, editar e excluir um pensamento.
+Essa é a api de dados do nosso frontend Mibess Cards. Desenvolvida utilizando Spring Boot com ela podemos listar, cadastrar, editar e excluir um pensamento.
 
 **Requisitos**
 
 [Spring Boot](https://start.spring.io/) versão >= 3.2.0.
+
 [Docker](https://www.docker.com/get-started/) versão >= 24.0.6
+
 [PostgreSQL](https://www.postgresql.org/download/) versão >= 15.5 - Apenas para referência, na instalação utilizamos uma versão conteinizada.
+
 [Mibess Frontend](https://github.com/mibess/mibess-cards) Aplicação frontend.
 
 **Obs:- Esse é apenas o backend da aplicação!**
