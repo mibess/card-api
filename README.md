@@ -124,11 +124,16 @@ cd card-api
 ```
 
 3 - Caso esteja usando o VS code fique atento a configuração dos seus arquivo!
+
 [CRLF Image](CRLF-config.png)
+
 **Altere para LF pois algum arquivo pode gerar erro de compilação**
 **No arquivo .editorconfig já está configurado para LF**
+
 ![LF Image](LF-config.png)
+
 **Exemplo de erro**
+
 ![Error Example](error-example.png)
 
 4 - Agora execute o comando abaixo:
