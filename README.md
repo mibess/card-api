@@ -125,7 +125,7 @@ cd card-api
 
 3 - Caso esteja usando o VS code fique atento a configuração dos seus arquivo!
 
-[CRLF Image](CRLF-config.png)
+![CRLF Image](CRLF-config.png)
 
 **Altere para LF pois algum arquivo pode gerar erro de compilação**
 **No arquivo .editorconfig já está configurado para LF**
